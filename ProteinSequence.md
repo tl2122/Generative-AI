@@ -78,10 +78,21 @@ shape, and long-range dependencies in protein sequences.
 
 
 ## Transformer Model
+<p>
 The BERT-style transformer architecture is used for protein sequence prediction incorporates 
 self-attention mechanisms, positional encoding, feedforward networks, and layer normalization. 
 Unlike other transformers, which often rely on autoregressive, unidirectional generation, BERT uses a 
 bidirectional encoder with masked language modeling for more comprehensive context understanding.
+
+The model incorporates 20 canonical amino acids and 3 ambiguous/unknown amino acids (B, X, Z),
+resulting in a total of 23 "amino acid" tokens. The hyperparameters, such as the number of attention heads 
+and layers, were selected to provide best model accuracy possible  given the dataset and model size. 
+A sequence length of 130 residues was chosen as the maximum input length to ensure efficient training. 
+The training loss and accuracy, as well trained confusion matrix from the validation data is shown below. 
+<img width="200" height="450" alt="image" src="https://github.com/user-attachments/assets/ec8f5cd4-b6ae-40c5-a67a-0d41a3b7b38b" align="right"/>
+*Transformer Model*
+</p>
+
 For this study, the following model parameters were used:
 ```
 model = ProteinTransformer(
@@ -94,16 +105,6 @@ model = ProteinTransformer(
     pad_token_id=token2idx["[PAD]"]
 )
 ```
-<p>
-The model incorporates 20 canonical amino acids and 3 ambiguous/unknown amino acids (B, X, Z),
-resulting in a total of 23 "amino acid" tokens. The hyperparameters, such as the number of attention heads 
-and layers, were selected to provide best model accuracy possible  given the dataset and model size. 
-A sequence length of 130 residues was chosen as the maximum input length to ensure efficient training. 
-The training loss and accuracy, as well trained confusion matrix from the validation data is shown below. 
-<img width="200" height="450" alt="image" src="https://github.com/user-attachments/assets/ec8f5cd4-b6ae-40c5-a67a-0d41a3b7b38b" align="right"/>
-*Transformer Model*
-
-
 | Layer	         |Individual Layer Parameters         |	Total Parameters  |
 |:--------------:|:----------------------------------:|:-----------------:|
 |Token Emb       |  Embedding (26, 256)               |	6,656             |
@@ -111,8 +112,6 @@ The training loss and accuracy, as well trained confusion matrix from the valida
 |Transformer (x4)|	Attention, Feedforward, LayerNorm	| 4,724,736         |
 | Total          |	                                  |	4,771,850         |
 
-
-</p>
 
 ## Training the Model
 The model was trained on the 20,000 protein sequences with a maximum sequence length of 128 residues,
@@ -123,7 +122,7 @@ These results highlight the model's ability to learn the underlying relationship
 although further improvements would require larger models and access to more extensive computation 
 capable of handling longer sequences. For a model with 4M parameters and 20k dataset, the accuracy is reasonable [7], 
 while the baseline accuracy from random guess is 1/23 ~ 4.5%. 
-<img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/41680af4-b068-4b5c-a7e9-048572d2824b" />
+<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/41680af4-b068-4b5c-a7e9-048572d2824b" />
 <img width="400" height="320" alt="image" src="https://github.com/user-attachments/assets/f85529a8-f4b7-4ee8-940e-7793c513cf0e" />
 *Loss and Accuracy, confusion Matrix*
 
