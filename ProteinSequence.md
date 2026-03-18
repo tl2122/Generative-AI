@@ -2,7 +2,8 @@
 layout: default
 title: "Protein Sequencing Using Masked Language Models with Transformer Architecture"
 ---
-<!-- # Protein Sequencing Using Masked Language Models with Transformer Architecture -->
+# Protein Sequencing Using Masked Language Models with Transformer Architecture
+
 ## Abstract
 Proteins, fundamental to life’s myriad functions, are encoded by intricate sequences 
 of amino acids, where their structure directly dictates their biological role. Understanding 
@@ -18,7 +19,6 @@ for the future of biological research and medical advancements.
 <p align='center'>
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/a538cba2-ad37-46ba-944e-de1ba292235e" />
 </p>
-
 *Fig 1: Diagram of secondary protein structure showing alpha-helices and beta-sheets, and amino acid chain.*
 
 Proteins are essential ingredients of life, performing a large number of critical functions in the body, including 
@@ -47,7 +47,7 @@ deep learning to capture complex structural relationships.
 The dataset used for this study comes from the UniProt SPROT database,
 a well-established resource that contains sequences of proteins from various organisms.
 The data consists of amino acid sequences that were tokenized and padded to form dense vectors  
-and used for training a transformer model. The computational complexity ($O(L^2)$) of the model
+and used for training a transformer model. The computational complexity ($`O(L^2)`$) of the model
 and its performance is proportional to the square of the sequence length. As such, only shorter
 sequences with 128 amino acid residues were used. In total, 25,000 protein sequences were included,
 with 20,000 sequences designated for training and the remaining 5,000 used for validation. The figures 
@@ -58,7 +58,6 @@ each amino acid residue, showing variations in residue frequencies across the da
 <img width="300" height="305" alt="image" src="https://github.com/user-attachments/assets/dd8c8faf-20c6-4f57-9306-f16ba22c87fa" />
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/e574854c-7efe-4399-af37-06a0dbe7fc98" />
 </p>
-
 *Fig 2: Length of protein sequences and frequecy of each amino acid residue (20 canonical + 3 ambiguous- B,X,Z) 
 in the training dataset.*
 
@@ -84,28 +83,19 @@ self-attention mechanisms, positional encoding, feedforward networks, and layer 
 Unlike other transformers, which often rely on autoregressive, unidirectional generation, BERT uses a 
 bidirectional encoder with masked language modeling for more comprehensive context understanding.
 For this study, the following model parameters were used:
-
-<div style="display: flex; justify-content: space-between;">
-
-  <!-- Code Snippet on the Left -->
-  <div style="width: 48%; text-align:left">
-   ```model = ProteinTransformer(
-      vocab_size=26,
-      d_model=256,
-      num_heads=8,
-      num_layers=4,
-      d_ff=1024,
-      max_len=130,
-      pad_token_id=token2idx["[PAD]"]
-    )```
-  </div>
-
-  <!-- Image on the Right -->
-  <div style="width: 48%; text-align: right;">
-    <img src="https://github.com/user-attachments/assets/72b331d5-bd00-42fe-8a00-cce934af2730";
-         alt="transformer-model"; style="width: 20%; max-width: 300px;">
-  </div>
-</div>
+```
+model = ProteinTransformer(
+    vocab_size=26,
+    d_model=256,
+    num_heads=8,
+    num_layers=4,
+    d_ff=1024,
+    max_len=130,
+    pad_token_id=token2idx["[PAD]"]
+)
+```
+<img width="150" height="450" alt="image" src="https://github.com/user-attachments/assets/ec8f5cd4-b6ae-40c5-a67a-0d41a3b7b38b" align="right"/>
+*Imae cap*
 
 | Layer	         |Individual Layer Parameters         |	Total Parameters  |
 |:--------------:|:----------------------------------:|:-----------------:|
@@ -113,7 +103,6 @@ For this study, the following model parameters were used:
 |Position Emb	   |  Embedding (130, 256)              | 33,280            |
 |Transformer (x4)|	Attention, Feedforward, LayerNorm	| 4,724,736         |
 | Total          |	                                  |	4,771,850         |
-
 
 The model incorporates 20 canonical amino acids and 3 ambiguous/unknown amino acids (B, X, Z),
 resulting in a total of 23 "amino acid" tokens. The hyperparameters, such as the number of attention heads 
@@ -132,6 +121,9 @@ These results highlight the model's ability to learn the underlying relationship
 although further improvements would require larger models and access to more extensive computation 
 capable of handling longer sequences. For a model with 4M parameters and 20k dataset, the accuracy is reasonable [7], 
 while the baseline accuracy from random guess is 1/23 ~ 4.5%. 
+<img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/41680af4-b068-4b5c-a7e9-048572d2824b" />
+<img width="350" height="300" alt="image" src="https://github.com/user-attachments/assets/f85529a8-f4b7-4ee8-940e-7793c513cf0e" />
+*Loss and Accuracy, confusion Matrix*
 
 
 ## Analysis using Embeddings
@@ -147,6 +139,14 @@ clusters from the k-Means algorithm provide insight into how protein sequences w
 (e.g. hydrophobicity, secondary structure) group together in the embedding space. Altough the exact properties 
 represented here would require further analysis, these findings are important for understanding how the transformer model 
 captures protein sequence relationships and structural features.
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/6372bd6b-f003-48ff-a05b-a6d1bcb9a14d" />
+*2d Embeddings*
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/aa5b28b2-def0-4afa-8c6c-4f2aa86875c3" />
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/b8f65b56-a573-4fec-a89b-c1166fc9ea22" />
+*Embeddings vs Seq length, k-means clusters*
+
+
+
 
 ## Conclusion
 In this study, a transformer model based on the BERT architecture was successfully applied to protein sequence prediction. 
