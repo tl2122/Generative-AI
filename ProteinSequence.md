@@ -5,10 +5,11 @@ title: "Protein Sequencing Using Masked Language Models with Transformer Archite
 <!-- # Protein Sequencing Using Masked Language Models with Transformer Architecture -->
 
 ## Introduction
+<p align='center'>
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/a538cba2-ad37-46ba-944e-de1ba292235e" />
 
-<img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/a538cba2-ad37-46ba-944e-de1ba292235e" />
-
-*Fig 1: Diagram of secondary protein structure showing alpha-helices and beta-sheets, and amino acid chain.*
+  *Fig 1: Diagram of secondary protein structure showing alpha-helices and beta-sheets, and amino acid chain.*
+</p>p
 
 Proteins are essential ingredients of life, performing a large number of critical functions in the body, including 
 catalyzing biochemical reactions and providing structural support. The proteins are made up of amino acids connected 
