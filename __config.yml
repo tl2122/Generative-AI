@@ -1,3 +1,7 @@
 theme: jekyll-theme-cayman
+
+# Add MathJax for rendering LaTeX
 plugins:
   - jekyll-mathjax
+
+mathjax: true
