@@ -105,12 +105,15 @@ model = ProteinTransformer(
     pad_token_id=token2idx["[PAD]"]
 )
 ```
+
+
 | Layer	         |Individual Layer Parameters         |	Total Parameters  |
 |:--------------:|:----------------------------------:|:-----------------:|
 |Token Emb       |  Embedding (26, 256)               |	6,656             |
 |Position Emb	   |  Embedding (130, 256)              | 33,280            |
 |Transformer (x4)|	Attention, Feedforward, LayerNorm	| 4,724,736         |
 | Total          |	                                  |	4,771,850         |
+
 
 
 ## Training the Model
@@ -122,7 +125,7 @@ These results highlight the model's ability to learn the underlying relationship
 although further improvements would require larger models and access to more extensive computation 
 capable of handling longer sequences. For a model with 4M parameters and 20k dataset, the accuracy is reasonable [7], 
 while the baseline accuracy from random guess is 1/23 ~ 4.5%. 
-<img width="500" height="250" alt="image" src="https://github.com/user-attachments/assets/41680af4-b068-4b5c-a7e9-048572d2824b" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/41680af4-b068-4b5c-a7e9-048572d2824b" />
 <img width="400" height="320" alt="image" src="https://github.com/user-attachments/assets/f85529a8-f4b7-4ee8-940e-7793c513cf0e" />
 *Loss and Accuracy, confusion Matrix*
 
@@ -140,9 +143,10 @@ clusters from the k-Means algorithm provide insight into how protein sequences w
 (e.g. hydrophobicity, secondary structure) group together in the embedding space. Altough the exact properties 
 represented here would require further analysis, these findings are important for understanding how the transformer model 
 captures protein sequence relationships and structural features.
-<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/6372bd6b-f003-48ff-a05b-a6d1bcb9a14d" />
+<img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/6372bd6b-f003-48ff-a05b-a6d1bcb9a14d" />
 
 *2d Embeddings*
+
 
 <img width="450" height="400" alt="image" src="https://github.com/user-attachments/assets/aa5b28b2-def0-4afa-8c6c-4f2aa86875c3" />
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/b8f65b56-a573-4fec-a89b-c1166fc9ea22" />
