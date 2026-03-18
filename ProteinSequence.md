@@ -94,17 +94,15 @@ model = ProteinTransformer(
     pad_token_id=token2idx["[PAD]"]
 )
 ```
-<p align="right">
-<img width="200" height="450" alt="image" src="https://github.com/user-attachments/assets/ec8f5cd4-b6ae-40c5-a67a-0d41a3b7b38b" align="right"/>
-*Transformer Model*
-
+<p>
 The model incorporates 20 canonical amino acids and 3 ambiguous/unknown amino acids (B, X, Z),
 resulting in a total of 23 "amino acid" tokens. The hyperparameters, such as the number of attention heads 
 and layers, were selected to provide best model accuracy possible  given the dataset and model size. 
 A sequence length of 130 residues was chosen as the maximum input length to ensure efficient training. 
 The training loss and accuracy, as well trained confusion matrix from the validation data is shown below. 
+<img width="200" height="450" alt="image" src="https://github.com/user-attachments/assets/ec8f5cd4-b6ae-40c5-a67a-0d41a3b7b38b" align="right"/>
+*Transformer Model*
 
-</p>
 
 | Layer	         |Individual Layer Parameters         |	Total Parameters  |
 |:--------------:|:----------------------------------:|:-----------------:|
@@ -114,7 +112,7 @@ The training loss and accuracy, as well trained confusion matrix from the valida
 | Total          |	                                  |	4,771,850         |
 
 
-
+</p>
 
 ## Training the Model
 The model was trained on the 20,000 protein sequences with a maximum sequence length of 128 residues,
