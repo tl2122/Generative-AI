@@ -94,7 +94,7 @@ model = ProteinTransformer(
     pad_token_id=token2idx["[PAD]"]
 )
 ```
-<img width="150" height="450" alt="image" src="https://github.com/user-attachments/assets/ec8f5cd4-b6ae-40c5-a67a-0d41a3b7b38b" align="right"/>
+<img width="2000" height="450" alt="image" src="https://github.com/user-attachments/assets/ec8f5cd4-b6ae-40c5-a67a-0d41a3b7b38b" align="right"/>
 *Imae cap*
 
 | Layer	         |Individual Layer Parameters         |	Total Parameters  |
@@ -122,7 +122,8 @@ although further improvements would require larger models and access to more ext
 capable of handling longer sequences. For a model with 4M parameters and 20k dataset, the accuracy is reasonable [7], 
 while the baseline accuracy from random guess is 1/23 ~ 4.5%. 
 <img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/41680af4-b068-4b5c-a7e9-048572d2824b" />
-<img width="350" height="300" alt="image" src="https://github.com/user-attachments/assets/f85529a8-f4b7-4ee8-940e-7793c513cf0e" />
+
+<img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/f85529a8-f4b7-4ee8-940e-7793c513cf0e" />
 *Loss and Accuracy, confusion Matrix*
 
 
@@ -141,6 +142,7 @@ represented here would require further analysis, these findings are important fo
 captures protein sequence relationships and structural features.
 <img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/6372bd6b-f003-48ff-a05b-a6d1bcb9a14d" />
 *2d Embeddings*
+
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/aa5b28b2-def0-4afa-8c6c-4f2aa86875c3" />
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/b8f65b56-a573-4fec-a89b-c1166fc9ea22" />
 *Embeddings vs Seq length, k-means clusters*
