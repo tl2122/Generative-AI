@@ -1,4 +1,8 @@
-# Protein Sequencing Using Masked Language Models with Transformer Architecture
+---
+layout: default
+title: "Protein Sequencing Using Masked Language Models with Transformer Architecture"
+---
+<!-- # Protein Sequencing Using Masked Language Models with Transformer Architecture -->
 
 ## Introduction
 
