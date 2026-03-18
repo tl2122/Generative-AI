@@ -1,3 +1,7 @@
+---
+layout: default
+title: ""
+---
 # Welcome to my GitHub Page
 Below you’ll find information about my projects and background.
 
