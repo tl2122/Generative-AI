@@ -36,7 +36,7 @@ deep learning to capture complex structural relationships.
 The dataset used for this study comes from the UniProt SPROT database,
 a well-established resource that contains sequences of proteins from various organisms.
 The data consists of amino acid sequences that were tokenized and padded to form dense vectors  
-and used for training a transformer model. The computational complexity ($ O(L^2) $) of the model
+and used for training a transformer model. The computational complexity ($O(L^2)$) of the model
 and its performance is proportional to the square of the sequence length. As such, only shorter
 sequences with 128 amino acid residues were used. In total, 25,000 protein sequences were included,
 with 20,000 sequences designated for training and the remaining 5,000 used for validation. The figures 
@@ -44,7 +44,7 @@ below (Fig. 2) illustrate the lengths of the training sequences and the frequenc
 each amino acid residue, showing variations in residue frequencies across the dataset.
 
 <p align =center>
-<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/dd8c8faf-20c6-4f57-9306-f16ba22c87fa" />
+<img width="300" height="320" alt="image" src="https://github.com/user-attachments/assets/dd8c8faf-20c6-4f57-9306-f16ba22c87fa" />
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/e574854c-7efe-4399-af37-06a0dbe7fc98" />
 </p>
 
