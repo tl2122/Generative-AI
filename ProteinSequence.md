@@ -143,18 +143,15 @@ clusters from the k-Means algorithm provide insight into how protein sequences w
 (e.g. hydrophobicity, secondary structure) group together in the embedding space. Altough the exact properties 
 represented here would require further analysis, these findings are important for understanding how the transformer model 
 captures protein sequence relationships and structural features.
+
 <img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/6372bd6b-f003-48ff-a05b-a6d1bcb9a14d" />
 
 *2d Embeddings*
-
 
 <img width="450" height="400" alt="image" src="https://github.com/user-attachments/assets/aa5b28b2-def0-4afa-8c6c-4f2aa86875c3" />
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/b8f65b56-a573-4fec-a89b-c1166fc9ea22" />
 
 *Embeddings vs Seq length, k-means clusters*
-
-
-
 
 ## Conclusion
 In this study, a transformer model based on the BERT architecture was successfully applied to protein sequence prediction. 
