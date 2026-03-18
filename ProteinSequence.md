@@ -3,6 +3,16 @@ layout: default
 title: "Protein Sequencing Using Masked Language Models with Transformer Architecture"
 ---
 <!-- # Protein Sequencing Using Masked Language Models with Transformer Architecture -->
+## Abstract
+Proteins, fundamental to life’s myriad functions, are encoded by intricate sequences 
+of amino acids, where their structure directly dictates their biological role. Understanding 
+this structure is crucial for advancing fields like drug design and molecular biology.  
+This study investigates the application of masked language modeling—an innovative deep learning approach—using a BERT-style 
+transformer architecture  for protein sequence prediction. The model was successfull in learning structural 
+properties and relationships between amino acids, demonstrating effectiveness of this approach, 
+while its performance was limited by the size of the dataset and computation. This work lays
+the foundation for using AI to decode the complexity of proteins, offering exciting possibilities 
+for the future of biological research and medical advancements.
 
 ## Introduction
 <p align='center'>
@@ -74,7 +84,28 @@ self-attention mechanisms, positional encoding, feedforward networks, and layer 
 Unlike other transformers, which often rely on autoregressive, unidirectional generation, BERT uses a 
 bidirectional encoder with masked language modeling for more comprehensive context understanding.
 For this study, the following model parameters were used:
- 
+
+<div style="display: flex; justify-content: space-between;">
+
+  <!-- Code Snippet on the Left -->
+  <div style="width: 48%; text-align:left">
+   ```model = ProteinTransformer(
+      vocab_size=26,
+      d_model=256,
+      num_heads=8,
+      num_layers=4,
+      d_ff=1024,
+      max_len=130,
+      pad_token_id=token2idx["[PAD]"]
+    )```
+  </div>
+
+  <!-- Image on the Right -->
+  <div style="width: 48%; text-align: right;">
+    <img src="https://github.com/user-attachments/assets/72b331d5-bd00-42fe-8a00-cce934af2730";
+         alt="transformer-model"; style="width: 20%; max-width: 300px;">
+  </div>
+</div>
 
 | Layer	         |Individual Layer Parameters         |	Total Parameters  |
 |:--------------:|:----------------------------------:|:-----------------:|
@@ -124,3 +155,14 @@ protein sequence analysis. While the model's performance is driven by dataset si
 transformers can successfully capture relationships in protein sequences. Future work will focus on scaling the dataset,
 enhancing the model’s complexity, and leveraging greater resources to achieve higher accuracy and deeper insights into 
 protein structure and function.
+
+<!--
+## References
+1. Rupp, B. (2010). *Biomolecular Crystallography: Principles, Practice, and Application. Garland Science*.
+2. L. AlQuraishi, *AlphaFold: Using AI for scientific discovery* Nature, vol. 591, pp. 222-224, 2020.
+3. Vaswani et al., *Attention is all you need* NeurIPS, 2017.
+4. M. K. Jones, et al., *Using deep learning models for protein sequence prediction* Bioinformatics, vol. 35, pp. 4621-4630, 2019.
+5. J. Jumper, et al., *Highly accurate protein structure prediction with AlphaFold* Nature, vol. 596, pp. 583-589, 2020.
+6. IBM, *Masked language models: Unlocking new possibilities with deep learning*,  ibm.com/think/topics/masked-language-model
+7. Brandes, N., Ofer, D., Peleg, Y., Rappoport, N., & Linial, M. *ProteinBERT: A universal deep-learning model of protein sequence and function. Bioinformatics*, 38(8), 2102–2110. doi.org/10.1093/bioinformatics/btac020
+-->
