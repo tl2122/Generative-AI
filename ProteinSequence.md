@@ -7,10 +7,9 @@ title: "Protein Sequencing Using Masked Language Models with Transformer Archite
 ## Introduction
 <p align='center'>
 <img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/a538cba2-ad37-46ba-944e-de1ba292235e" />
+</p>
 
 *Fig 1: Diagram of secondary protein structure showing alpha-helices and beta-sheets, and amino acid chain.*
-
-</p>
 
 Proteins are essential ingredients of life, performing a large number of critical functions in the body, including 
 catalyzing biochemical reactions and providing structural support. The proteins are made up of amino acids connected 
@@ -46,7 +45,7 @@ below (Fig. 2) illustrate the lengths of the training sequences and the frequenc
 each amino acid residue, showing variations in residue frequencies across the dataset.
 
 <p align =center>
-<img width="300" height="320" alt="image" src="https://github.com/user-attachments/assets/dd8c8faf-20c6-4f57-9306-f16ba22c87fa" />
+<img width="300" height="305" alt="image" src="https://github.com/user-attachments/assets/dd8c8faf-20c6-4f57-9306-f16ba22c87fa" />
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/e574854c-7efe-4399-af37-06a0dbe7fc98" />
 </p>
 
