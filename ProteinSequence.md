@@ -49,6 +49,78 @@ each amino acid residue, showing variations in residue frequencies across the da
 <img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/e574854c-7efe-4399-af37-06a0dbe7fc98" />
 </p>
 
-*Fig 2: Length of protein sequences and frequecy of each amino acid residue in the training dataset.*
+*Fig 2: Length of protein sequences and frequecy of each amino acid residue (20 canonical + 3 ambiguous- B,X,Z) 
+in the training dataset.*
 
 
+## Modeling Protein Sequences
+In recent years, techniques from natural language processing (NLP), particularly masked language modeling, 
+have been adopted for biological sequence analysis. The idea behind masked language modeling is to mask 
+a certain percentage of the input sequence and train the model to predict the missing tokens based on the context 
+of the remaining sequence [6]. This concept has been extended to protein sequences, where amino acid residues are 
+masked and the model is tasked with predicting these residues from the surrounding context. In this study, a BERT-style 
+transformer model was employed for protein sequence analysis, with a maximum of 20% of the amino acid residues randomly masked during training.
+A major advantage of transformers, such as BERT, is that they read the entire sequence at once and process
+it bidirectionally, meaning that the model can capture long-range dependencies between amino acid residues. 
+This is crucial for understanding protein structures, as the function and shape of a protein are determined not only by 
+the immediate interactions between adjacent residues but also by more distant interactions that can influence the protein’s 
+overall conformation. In this context, the transformer model was expected to capture structural properties such as hydrophobicity, 
+shape, and long-range dependencies in protein sequences.
+
+
+## Transformer Model
+The BERT-style transformer architecture is used for protein sequence prediction incorporates 
+self-attention mechanisms, positional encoding, feedforward networks, and layer normalization. 
+Unlike other transformers, which often rely on autoregressive, unidirectional generation, BERT uses a 
+bidirectional encoder with masked language modeling for more comprehensive context understanding.
+For this study, the following model parameters were used:
+ 
+
+| Layer	         |Individual Layer Parameters         |	Total Parameters  |
+|:--------------:|:----------------------------------:|:-----------------:|
+|Token Emb       |  Embedding (26, 256)               |	6,656             |
+|Position Emb	   |  Embedding (130, 256)              | 33,280            |
+|Transformer (x4)|	Attention, Feedforward, LayerNorm	| 4,724,736         |
+| Total          |	                                  |	4,771,850         |
+
+
+The model incorporates 20 canonical amino acids and 3 ambiguous/unknown amino acids (B, X, Z),
+resulting in a total of 23 "amino acid" tokens. The hyperparameters, such as the number of attention heads 
+and layers, were selected to provide best model accuracy possible  given the dataset and model size. 
+A sequence length of 130 residues was chosen as the maximum input length to ensure efficient training. 
+The training loss and accuracy, as well trained confusion matrix from the validation data is shown below. 
+
+
+
+## Training the Model
+The model was trained on the 20,000 protein sequences with a maximum sequence length of 128 residues,
+while 5,000 sequences were reserved for validation. Training was conducted with the goal of balancing 
+the complexity of the model with the available data and computational resources.
+The model achieved approximately 40% accuracy on the training set and 35% accuracy on the validation set. 
+These results highlight the model's ability to learn the underlying relationships in the sequences,
+although further improvements would require larger models and access to more extensive computation 
+capable of handling longer sequences. For a model with 4M parameters and 20k dataset, the accuracy is reasonable [7], 
+while the baseline accuracy from random guess is 1/23 ~ 4.5%. 
+
+
+## Analysis using Embeddings
+Embeddings refer to the process of representing high-dimensional input data in a lower-dimensional space. 
+In the context of the transformer model, embeddings are learned representations of the input sequences 
+that capture semantic and structural information about the sequences. Using t-SNE (t-distributed Stochastic Neighbor Embedding),
+the high-dimensional embeddings were projected in a 2D space. The resulting plot revealed a large central cluster, representing 
+sequences that are highly similar to each other, with multiple smaller clusters in the periphery. These smaller clusters likely 
+correspond to sequences that belong to distinct protein families or exhibit unique secondary structures. The visualization 
+suggests that the model has learned to encode meaningful relationships between protein sequences, such as  evolutionary or functional similarity.
+Furthermore, k-Means clustering was applied to group the embeddings into 20 distinct clusters. The resulting 2D 
+clusters from the k-Means algorithm provide insight into how protein sequences with similar structural properties 
+(e.g. hydrophobicity, secondary structure) group together in the embedding space. Altough the exact properties 
+represented here would require further analysis, these findings are important for understanding how the transformer model 
+captures protein sequence relationships and structural features.
+
+## Conclusion
+In this study, a transformer model based on the BERT architecture was successfully applied to protein sequence prediction. 
+Trained on 25,000 protein sequences, the model demonstrated effectiveness of using masked language modeling for 
+protein sequence analysis. While the model's performance is driven by dataset size and model size, the results show that 
+transformers can successfully capture relationships in protein sequences. Future work will focus on scaling the dataset,
+enhancing the model’s complexity, and leveraging greater resources to achieve higher accuracy and deeper insights into 
+protein structure and function.
