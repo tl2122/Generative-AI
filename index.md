@@ -6,7 +6,7 @@ title: ""
 Below you’ll find information about my projects and background.
 
 ## About Me
-I am an applied scientist with a strong focus on computational modeling and data-driven analysis.
+I am a scientist working at the intersection of computational modeling and data-driven analysis.
 With a deep understanding of complex systems, I specialize in developing and implementing models 
 that aim to reduce uncertainty and optimize decision-making. My work 
 is driven by precise, data-informed approaches which are now essential to addressing critical problems.
