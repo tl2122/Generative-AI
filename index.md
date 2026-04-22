@@ -39,7 +39,8 @@ to solve some of the most challenging problems in biology today.
    - **Deployment**: GitHub Pages
 
 
-
+## Articles
+1. Implicit vs Explicit Structure: Do Transformers Eliminate the Need for Graph Neural Networks? [text](https://tl2122.github.io/Generative-AI/GNNOrTransformers.html)
 
 ## Links
 
