@@ -4,4 +4,4 @@
 2. Secondary Structure Prediction using pre-trained embeddings (prelim) ([ipynb](https://github.com/tl2122/Generative-AI/blob/main/ProteinStructure_SecStructure_wEmbeddings.ipynb))
 
 ## Articles
-1. Graph Neural Networks vs Transformers ([text](https://github.com/tl2122/Generative-AI/blob/main/GNNOrTransformers.md))
+1. Implicit vs Explicit Structure: Do Transformers Eliminate the Need for Graph Neural Networks? ([text](https://tl2122.github.io/Generative-AI/GNNOrTransformers.html))
