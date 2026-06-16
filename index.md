@@ -41,6 +41,9 @@ to solve some of the most challenging problems in biology today.
 
 ## Articles
 1. Implicit vs Explicit Structure: Do Transformers Eliminate the Need for Graph Neural Networks? [text](https://tl2122.github.io/Generative-AI/GNNOrTransformers.html)
+2. Particles and Pavement: Resolving complexity with Graphical Neural Networks ([text](https://tl2122.github.io/Generative-AI/GNNInHEP.html))
+3. Why More AI Agents Don’t Always Mean Better Results ([text](https://tl2122.github.io/Generative-AI/AgenticAI_Scaling.html))
+
 
 ## Links
 
